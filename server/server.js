@@ -7,9 +7,13 @@ const {generateLocationMessage}=require('./utils/message');
 
 var app = express();
 app.use(express.static(path.join(__dirname,'../public')));
-var port = process.env.PORT||8000;
+var port = process.env.PORT||3000;
 var server = http.createServer(app);
 var io = socketIO(server);
+
+app.get('/chat',function(req,res){
+  res.sendFile(path.join(__dirname,'../public/chat.html'));
+});
 
 io.on('connection',(socket)=>{
     console.log('New User Connected');
