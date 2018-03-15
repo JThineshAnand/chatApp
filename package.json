@@ -2,7 +2,7 @@
   "name": "chatapp",
   "version": "1.0.0",
   "description": "Chat Application",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server/server.js",
     "test": "mocha server/**/*.test.js",
